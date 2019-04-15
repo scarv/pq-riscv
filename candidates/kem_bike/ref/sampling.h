@@ -36,6 +36,7 @@
 #define _SAMPLE_H_
 
 #include "rng.h"
+#include "aes_ctr_prf.h"
 
 typedef enum 
 {

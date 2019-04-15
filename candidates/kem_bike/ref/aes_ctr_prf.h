@@ -37,7 +37,8 @@
 #define __AES_CTR_REF_H_INCLUDED__
 
 #include "types.h"
-#include "openssl/aes.h"
+
+#include "common/aes.h"
 
 #define AES256_KEY_SIZE 32ULL
 #define AES256_KEY_BITS (AES256_KEY_SIZE*8)

@@ -34,7 +34,6 @@
 
 #include "utilities.h"
 #include "stdio.h"
-#include "openssl_utils.h"
 
 #define BITS_IN_QW 64ULL
 #define BITS_IN_BYTE 8ULL

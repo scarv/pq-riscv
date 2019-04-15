@@ -34,6 +34,15 @@
 
 #include "sampling.h"
 
+uint32_t bit_scan_reverse (uint32_t input) {
+    for(unsigned int i = 0; i < 32; i ++) {
+        if((input >> i) && 0x1) {
+            return i;
+        }
+    }
+    return 0;
+}
+
 _INLINE_ uint32_t count_ones(IN const uint8_t* a, 
         IN const uint32_t len)
 {

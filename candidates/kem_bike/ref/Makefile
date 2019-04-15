@@ -10,20 +10,20 @@
 # which means that every keygen, encaps and decaps is repeated 100 times and the number of cycles is averaged.
 
 # Verbose levels: 0, 1, 2 or 3
-VERBOSE=0
 
-SRC = $(SCHEME_SRC)/PQCgenKAT_kem.c \
-      $(SCHEME_SRC)/aes_ctr_prf.c \
-      $(SCHEME_SRC)/conversions.c \
-      $(SCHEME_SRC)/decode.c \
+SRC = $(SCHEME_SRC)/conversions.c \
       $(SCHEME_SRC)/kem.c \
       $(SCHEME_SRC)/parallel_hash.c \
       $(SCHEME_SRC)/ring_buffer.c \
       $(SCHEME_SRC)/rng.c \
       $(SCHEME_SRC)/sampling.c \
       $(SCHEME_SRC)/threshold.c \
+      $(SCHEME_SRC)/aes_ctr_prf.c \
+      $(SCHEME_SRC)/decode.c \
       $(SCHEME_SRC)/utilities.c \
-      $(SCHEME_SRC)/ntl.cpp \
+      $(SCHEME_SRC)/ntl.c \
+      $(COMMON_SRC)/aes.c \
+      $(COMMON_SRC)/sha2.c
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
@@ -34,12 +34,7 @@ $(BUILD)/%.o : $(SCHEME_SRC)/%.c
 	mkdir -p $(dir $(BUILD))
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(BUILD)/%.o : $(SCHEME_SRC)/%.cpp
-	mkdir -p $(dir $(BUILD))
-	$(CXX) $(CFLAGS) -c -o $@ $<
-
 $(info $(BUILD))
 
-$(BUILD)/lib$(SCHEME).a : $(OBJ)
+$(LIBNAME) : $(OBJ)
 	$(AR) rcs $@ $^
-

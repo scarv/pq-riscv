@@ -6,25 +6,40 @@ ISA_BASE  = rv$(ISA_XLEN)i
 ISA_EXT   = mafd
 ISA_STR   = $(ISA_BASE)$(ISA_EXT)
 
-CC        = $(RISCV)/bin/riscv$(ISA_XLEN)-unknown-elf-gcc
-CXX       = $(RISCV)/bin/riscv$(ISA_XLEN)-unknown-elf-g++
-AS        = $(RISCV)/bin/riscv$(ISA_XLEN)-unknown-elf-as 
-LD        = $(RISCV)/bin/riscv$(ISA_XLEN)-unknown-elf-ld 
-AR        = $(RISCV)/bin/riscv$(ISA_XLEN)-unknown-elf-ar 
-OBJDUMP   = $(RISCV)/bin/riscv$(ISA_XLEN)-unknown-elf-objdump
+GNU_STRING= riscv$(ISA_XLEN)-unknown-elf-
 
-CFLAGS    = -O3 -march=$(ISA_STR) -I$(PQRV)/common
-CXXFLAGS  = -O3 -march=$(ISA_STR) -I$(PQRV)/common
+CC        = $(RISCV)/bin/$(GNU_STRING)gcc
+CXX       = $(RISCV)/bin/$(GNU_STRING)g++
+AS        = $(RISCV)/bin/$(GNU_STRING)as 
+LD        = $(RISCV)/bin/$(GNU_STRING)ld 
+AR        = $(RISCV)/bin/$(GNU_STRING)ar 
+OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)objdump
+
+CFLAGS    = -O3 -march=$(ISA_STR) -I$(PQRV) -g
+CXXFLAGS  = -O3 -march=$(ISA_STR) -I$(PQRV) -g
 
 SCHEME   ?= kem_bike
 VARIANT  ?= ref
 
 BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)
 SCHEME_SRC= $(PQRV)/candidates/$(SCHEME)/$(VARIANT)
+COMMON_SRC= $(PQRV)/common
+
+LIBNAME   = $(BUILD)/lib$(SCHEME).a
+EXENAME   = $(BUILD)/$(SCHEME).exe
+HARNESS   = $(PQRV)/harness/main.c
 
 include $(PQRV)/candidates/$(SCHEME)/$(VARIANT)/Makefile
 
-lib: $(BUILD)/lib$(SCHEME).a 
+exe: $(EXENAME)
+lib: $(LIBNAME)
+
+$(BUILD)/%.o : $(COMMON_SRC)/%.c
+	mkdir -p $(dir $(BUILD))
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(EXENAME) : $(HARNESS) $(LIBNAME)
+	$(CC) $(CFLAGS) -I$(SCHEME_SRC) -o $@ $< $(LIBNAME) -lm
 
 clean:
 	rm -rf $(BUILD)/*

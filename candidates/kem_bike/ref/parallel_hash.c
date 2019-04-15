@@ -34,9 +34,10 @@
 
 #include "parallel_hash.h"
 #include "utilities.h"
-#include "openssl/sha.h"
 #include "string.h"
 #include "stdio.h"
+
+#include "common/sha2.h"
 
 #define SLICE_REM       111ULL
 #define PH_SLICES_NUM   8ULL
@@ -93,7 +94,7 @@ void parallel_hash(OUT sha384_hash_t* out_hash,
     //Hash each block (X[i]).
     for(uint32_t i = 0; i < PH_SLICES_NUM; i++)
     {
-        SHA384(&m[i * ls], ls, yx.x[i].raw);
+        sha384(yx.x[i].raw, &m[i * ls], ls);
         EDMSG("X[%u]:", i); print((uint64_t*)yx.x[i].raw, sizeof(yx.x[i])*8);
     }
 
@@ -102,7 +103,7 @@ void parallel_hash(OUT sha384_hash_t* out_hash,
 
     //Compute the final hash (on YX).
     //We explicitly use lrem instead of sizeof(yx.y) because yx.y is padded with zeros.
-    SHA384(yx.raw, sizeof(yx.x)+lrem, out_hash->raw);
+    sha384(out_hash->raw, yx.raw, sizeof(yx.x)+lrem);
 
     EDMSG("\nY:  "); print((uint64_t*)yx.y, lrem*8);
 

@@ -32,32 +32,75 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-
-#ifndef _R_DECAPS_H_
-#define _R_DECAPS_H_
-
 #include "types.h"
 
-// Count number of 1's in tmp:
-uint32_t getHammingWeight(const uint8_t tmp[R_BITS], const uint32_t length);
+//#include <NTL/GF2X.h>
 
-// Backflip decoder.
-// Decode a syndrome s into an error vector e.
-// The final syndrome weight is less-or-equal than u.
-int qcmdpc_decode_backflip_ttl(
-    uint8_t e[R_BITS*2],
-    uint8_t s[R_BITS],
-    uint32_t h0_compact[DV],
-    uint32_t h1_compact[DV],
-    uint32_t u);
+//using namespace NTL;
 
-// BIKE Round 1 decoder.
-// Decode a syndrome s into an error vector e.
-// The final syndrome weight is less-or-equal than u.
-int decode_1st_round(uint8_t e[R_BITS*2],
-        uint8_t s[R_BITS],
-        uint32_t h0_compact[DV],
-        uint32_t h1_compact[DV],
-        uint32_t u);
+typedef unsigned char uint8_t;
 
-#endif //_R_DECAPS_H_
+void ntl_add(OUT uint8_t res_bin[R_SIZE],
+        IN const uint8_t a_bin[R_SIZE],
+        IN const uint8_t b_bin[R_SIZE])
+{
+    //GF2X a, b, res;
+
+    //GF2XFromBytes(a, a_bin, R_SIZE);
+    //GF2XFromBytes(b, b_bin, R_SIZE);
+
+    //add(res, a, b);
+
+    //BytesFromGF2X(res_bin, res, R_SIZE);
+}
+
+void ntl_mod_inv(OUT uint8_t res_bin[R_SIZE],
+        IN const uint8_t a_bin[R_SIZE])
+{
+    //GF2X _m, a, res;
+
+    //GF2XFromBytes(a, a_bin, R_SIZE);
+
+    ////Create the modulus
+    //GF2XModulus m;
+    //SetCoeff(_m, 0, 1);
+    //SetCoeff(_m, R_BITS, 1);
+    //build(m, _m);
+
+    //InvMod(res, a, m);
+    //BytesFromGF2X(res_bin, res, R_SIZE);
+}
+
+void ntl_mod_mul(OUT uint8_t res_bin[R_SIZE], 
+        IN const uint8_t a_bin[R_SIZE],
+        IN const uint8_t b_bin[R_SIZE])
+{
+    //GF2X _m, a, b, res;
+
+    //GF2XFromBytes(a, a_bin, R_SIZE);
+    //GF2XFromBytes(b, b_bin, R_SIZE);
+
+    ////Create the modulus
+    //GF2XModulus m;
+    //SetCoeff(_m, 0, 1);
+    //SetCoeff(_m, R_BITS, 1);
+    //build(m, _m);
+
+    //MulMod(res, a, b, m);
+
+    //BytesFromGF2X(res_bin, res, R_SIZE);
+}
+
+void ntl_split_polynomial(OUT uint8_t e0[R_SIZE],
+        OUT uint8_t e1[R_SIZE],
+        IN const uint8_t e[2*R_SIZE])
+{
+    //GF2X e_pol, e0_pol, e1_pol;
+    //GF2XFromBytes(e_pol, e, N_SIZE);
+    //trunc(e0_pol, e_pol, R_BITS);
+    //RightShift(e1_pol, e_pol, R_BITS);
+
+    //BytesFromGF2X(e0, e0_pol, R_SIZE);
+    //BytesFromGF2X(e1, e1_pol, R_SIZE);
+}
+

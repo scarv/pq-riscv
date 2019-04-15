@@ -46,7 +46,7 @@ status_t init_aes_ctr_prf_state(OUT aes_ctr_prf_state_t* s,
     }
 
     //Set the Key schedule (from seed).
-    if (AES_set_encrypt_key(seed->raw, AES256_KEY_BITS, &s->key) != 0)
+    if (pqriscv_aes_set_encrypt_key(seed->raw, AES256_KEY_BITS, &s->key) != 0)
     {
         return E_AES_SET_KEY_FAIL;
     }
@@ -55,7 +55,7 @@ status_t init_aes_ctr_prf_state(OUT aes_ctr_prf_state_t* s,
     s->ctr.qwords[0] = 0;
     s->ctr.qwords[1] = 0;
 
-    AES_encrypt(s->ctr.bytes, s->buffer.bytes, &s->key);
+    pqriscv_aes_encrypt(s->ctr.bytes, s->buffer.bytes, &s->key);
     s->ctr.qwords[0]++;
 
     s->pos = 0;
@@ -77,7 +77,7 @@ _INLINE_ status_t perform_aes(OUT uint8_t* ct, IN OUT aes_ctr_prf_state_t* s)
         return E_AES_OVER_USED;
     }
 
-    AES_encrypt(s->ctr.bytes, ct, &s->key);
+    pqriscv_aes_encrypt(s->ctr.bytes, ct, &s->key);
     s->ctr.qwords[0]++;
     s->rem_invokations--;
 
