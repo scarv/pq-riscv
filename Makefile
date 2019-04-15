@@ -3,17 +3,17 @@ PQRV      = $(PWD)
 
 ISA_XLEN  = 32
 ISA_BASE  = rv$(ISA_XLEN)i
-ISA_EXT   = mafd
+ISA_EXT   = mc
 ISA_STR   = $(ISA_BASE)$(ISA_EXT)
 
-GNU_STRING= riscv$(ISA_XLEN)-unknown-elf-
+GNU_STRING= riscv$(ISA_XLEN)-unknown-elf
 
-CC        = $(RISCV)/bin/$(GNU_STRING)gcc
-CXX       = $(RISCV)/bin/$(GNU_STRING)g++
-AS        = $(RISCV)/bin/$(GNU_STRING)as 
-LD        = $(RISCV)/bin/$(GNU_STRING)ld 
-AR        = $(RISCV)/bin/$(GNU_STRING)ar 
-OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)objdump
+CC        = $(RISCV)/bin/$(GNU_STRING)-gcc
+CXX       = $(RISCV)/bin/$(GNU_STRING)-g++
+AS        = $(RISCV)/bin/$(GNU_STRING)-as 
+LD        = $(RISCV)/bin/$(GNU_STRING)-ld 
+AR        = $(RISCV)/bin/$(GNU_STRING)-ar 
+OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)-objdump
 
 CFLAGS    = -O3 -march=$(ISA_STR) -I$(PQRV) -g
 CXXFLAGS  = -O3 -march=$(ISA_STR) -I$(PQRV) -g
@@ -40,6 +40,11 @@ $(BUILD)/%.o : $(COMMON_SRC)/%.c
 
 $(EXENAME) : $(HARNESS) $(LIBNAME)
 	$(CC) $(CFLAGS) -I$(SCHEME_SRC) -o $@ $< $(LIBNAME) -lm
+	$(OBJDUMP) -D $@ > $@.dis
+
+run: $(EXENAME)
+	$(RISCV)/bin/spike -g \
+        $(RISCV)/$(GNU_STRING)/bin/pk $(EXENAME)
 
 clean:
 	rm -rf $(BUILD)/*
