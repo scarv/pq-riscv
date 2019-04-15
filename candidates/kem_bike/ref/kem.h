@@ -39,7 +39,7 @@
 #include "stdlib.h"
 #include "string.h"
 #include "utilities.h"
-#include "rng.h"
+#include "common/rng.h"
 
 enum _seeds_purpose
 {

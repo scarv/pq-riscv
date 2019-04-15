@@ -15,7 +15,6 @@ SRC = $(SCHEME_SRC)/conversions.c \
       $(SCHEME_SRC)/kem.c \
       $(SCHEME_SRC)/parallel_hash.c \
       $(SCHEME_SRC)/ring_buffer.c \
-      $(SCHEME_SRC)/rng.c \
       $(SCHEME_SRC)/sampling.c \
       $(SCHEME_SRC)/threshold.c \
       $(SCHEME_SRC)/aes_ctr_prf.c \
@@ -23,12 +22,10 @@ SRC = $(SCHEME_SRC)/conversions.c \
       $(SCHEME_SRC)/utilities.c \
       $(SCHEME_SRC)/ntl.c \
       $(COMMON_SRC)/aes.c \
-      $(COMMON_SRC)/sha2.c
+      $(COMMON_SRC)/sha2.c \
+      $(COMMON_SRC)/rng.c 
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
-
-$(info $(SRC))
-$(info $(OBJ))
 
 $(BUILD)/%.o : $(SCHEME_SRC)/%.c
 	mkdir -p $(dir $(BUILD))

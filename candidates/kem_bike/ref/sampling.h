@@ -35,7 +35,7 @@
 #ifndef _SAMPLE_H_
 #define _SAMPLE_H_
 
-#include "rng.h"
+#include "common/rng.h"
 #include "aes_ctr_prf.h"
 
 typedef enum 
