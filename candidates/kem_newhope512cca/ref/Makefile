@@ -1,0 +1,23 @@
+
+SRC = $(SCHEME_SRC)/cpapke.c \
+      $(SCHEME_SRC)/kem.c \
+      $(SCHEME_SRC)/ntt.c \
+      $(SCHEME_SRC)/poly.c \
+      $(SCHEME_SRC)/precomp.c \
+      $(SCHEME_SRC)/reduce.c \
+      $(SCHEME_SRC)/verify.c \
+      $(COMMON_SRC)/fips202.c \
+      $(COMMON_SRC)/aes.c \
+      $(COMMON_SRC)/keccakf1600.c \
+      $(COMMON_SRC)/rng.c 
+
+OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
+
+$(BUILD)/%.o : $(SCHEME_SRC)/%.c
+	mkdir -p $(BUILD)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(info $(BUILD))
+
+$(LIBNAME) : $(OBJ)
+	$(AR) rcs $@ $^
