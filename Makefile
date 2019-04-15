@@ -18,7 +18,7 @@ OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)-objdump
 CFLAGS    = -O2 -march=$(ISA_STR) -I$(PQRV) -g
 CXXFLAGS  = -O2 -march=$(ISA_STR) -I$(PQRV) -g
 
-SCHEME   ?= kem_nokats_12_64
+SCHEME   ?= kem_round5_r5n1_1kem_0d
 VARIANT  ?= ref
 
 BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)
