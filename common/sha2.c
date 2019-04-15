@@ -2,6 +2,7 @@
  * crypto_hash/sha512/ref/ from http://bench.cr.yp.to/supercop.html
  * by D. J. Bernstein */
 
+#include <stdio.h>
 #include "sha2.h"
 
 #ifdef PROFILE_HASHING

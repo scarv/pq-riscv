@@ -36,7 +36,12 @@ on the RISC-V ISA.*
 - [ ] `ntru-hps2048677`
 - [ ] `ntru-hps4096821`
 - [ ] `ntru-hrss701`
-- [ ] `ntru-prime-round2`
+- [X] `ntru-prime-ntrulpr653`
+- [ ] `ntru-prime-ntrulpr761`
+- [ ] `ntru-prime-ntrulpr857`
+- [ ] `ntru-prime-sntrup653`
+- [ ] `ntru-prime-sntrup761`
+- [ ] `ntru-prime-sntrup857`
 - [ ] `ntskem_nokats`
 - [ ] `rollo`
 - [ ] `round5`
