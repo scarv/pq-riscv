@@ -26,7 +26,12 @@ on the RISC-V ISA.*
 - [ ] `newhope512cpa`
 - [ ] `newhope1014cca`
 - [ ] `newhope1014cpa`
-- [ ] `nist-hqc`
+- [X] `hqc-128-1`
+- [ ] `hqc-192-1`
+- [ ] `hqc-192-2`
+- [ ] `hqc-256-1`
+- [ ] `hqc-256-2`
+- [ ] `hqc-256-3`
 - [ ] `ntru`
 - [ ] `ntru-prime-round2`
 - [ ] `ntskem_nokats`
