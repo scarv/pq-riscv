@@ -32,7 +32,10 @@ on the RISC-V ISA.*
 - [ ] `hqc-256-1`
 - [ ] `hqc-256-2`
 - [ ] `hqc-256-3`
-- [ ] `ntru`
+- [X] `ntru-hps2048509`
+- [ ] `ntru-hps2048677`
+- [ ] `ntru-hps4096821`
+- [ ] `ntru-hrss701`
 - [ ] `ntru-prime-round2`
 - [ ] `ntskem_nokats`
 - [ ] `rollo`
