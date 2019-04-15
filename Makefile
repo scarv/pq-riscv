@@ -18,7 +18,7 @@ OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)-objdump
 CFLAGS    = -O3 -march=$(ISA_STR) -I$(PQRV) -g
 CXXFLAGS  = -O3 -march=$(ISA_STR) -I$(PQRV) -g
 
-SCHEME   ?= kem_mceliece348864
+SCHEME   ?= kem_frodo640
 VARIANT  ?= ref
 
 BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)

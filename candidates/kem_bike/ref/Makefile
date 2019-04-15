@@ -28,7 +28,7 @@ SRC = $(SCHEME_SRC)/conversions.c \
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
 $(BUILD)/%.o : $(SCHEME_SRC)/%.c
-	mkdir -p $(dir $(BUILD))
+	mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(info $(BUILD))
