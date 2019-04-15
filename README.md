@@ -42,7 +42,9 @@ on the RISC-V ISA.*
 - [ ] `ntru-prime-sntrup653`
 - [ ] `ntru-prime-sntrup761`
 - [ ] `ntru-prime-sntrup857`
-- [ ] `ntskem_nokats`
+- [X] `nokats_12_64`
+- [ ] `nokats_13_80`
+- [ ] `nokats_13_136`
 - [ ] `rollo`
 - [ ] `round5`
 - [ ] `rqc`

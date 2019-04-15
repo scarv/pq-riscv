@@ -18,7 +18,7 @@ OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)-objdump
 CFLAGS    = -O2 -march=$(ISA_STR) -I$(PQRV) -g
 CXXFLAGS  = -O2 -march=$(ISA_STR) -I$(PQRV) -g
 
-SCHEME   ?= kem_ntru-prime-ntrulpr653
+SCHEME   ?= kem_nokats_12_64
 VARIANT  ?= ref
 
 BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)
@@ -43,7 +43,7 @@ $(EXENAME) : $(HARNESS) $(LIBNAME)
 	$(OBJDUMP) -D $@ > $@.dis
 
 run: $(EXENAME)
-	$(RISCV)/bin/spike -g \
+	$(RISCV)/bin/spike \
         $(RISCV)/$(GNU_STRING)/bin/pk $(EXENAME)
 
 clean:
