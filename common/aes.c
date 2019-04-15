@@ -24,6 +24,16 @@ void pqriscv_aes_256_ecb (
     pqriscv_aes_encrypt(ctr,ctxt,key);
 }
 
+/*!
+*/
+int pqriscv_stream_aes256ctr(
+    unsigned char *c,
+    unsigned long long clen,
+    const unsigned char *n,
+    const unsigned char *k
+){
+    printf("%s:%d Not Implemented\n",__FILE__,__LINE__);
+}
 
 /*!
 */

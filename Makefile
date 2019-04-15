@@ -1,7 +1,7 @@
 
 PQRV      = $(PWD)
 
-ISA_XLEN  = 64
+ISA_XLEN  = 32
 ISA_BASE  = rv$(ISA_XLEN)i
 ISA_EXT   = mafd
 ISA_STR   = $(ISA_BASE)$(ISA_EXT)
@@ -18,7 +18,7 @@ OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)objdump
 CFLAGS    = -O3 -march=$(ISA_STR) -I$(PQRV) -g
 CXXFLAGS  = -O3 -march=$(ISA_STR) -I$(PQRV) -g
 
-SCHEME   ?= kem_kyber512
+SCHEME   ?= kem_mceliece348864
 VARIANT  ?= ref
 
 BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)

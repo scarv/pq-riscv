@@ -45,6 +45,16 @@ void pqriscv_aes_256_ecb (
     unsigned char *ctxt
 );
 
+/*
+@brief AES 256 ctr mode encrypt
+@note Signature lifted from newhope
+*/
+int pqriscv_stream_aes256ctr(
+    unsigned char *c,
+    unsigned long long clen,
+    const unsigned char *n,
+    const unsigned char *k
+);
 
 /*!
 @brief Encrypt a single AES block
