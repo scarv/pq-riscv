@@ -26,6 +26,8 @@ int main(int argc, char ** argv) {
     printf("- Decrypt:\n");
     crypto_kem_dec(ss, ct, sk);
 
+    printf("--- END ---\n");
+
     return 0;
 
 }

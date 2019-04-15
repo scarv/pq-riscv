@@ -271,6 +271,12 @@ static const unsigned char iv_512[64] = {
   0x5b,0xe0,0xcd,0x19,0x13,0x7e,0x21,0x79
 };
 
+int sha256(unsigned char *out, const unsigned char *in, unsigned long long inlen)
+{
+    printf("%s:%d not implemented\n",__FILE__,__LINE__);
+    return 0;
+}
+
 int sha384(unsigned char *out, const unsigned char *in, unsigned long long inlen)
 {
 #ifdef PROFILE_HASHING
