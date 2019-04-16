@@ -37,7 +37,13 @@ int pqriscv_stream_aes256ctr(
     const unsigned char *n,
     const unsigned char *k
 ){
-    printf("%s:%d Not Implemented\n",__FILE__,__LINE__);
+    printf("pqriscv_stream_aes256ctr: %d",clen);
+    fflush(stdout);
+    struct AES_ctx ctx;
+    AES_init_ctx(&ctx,k);
+    AES_ctx_set_iv(&ctx, n); // n = nonce = IV.
+    AES_CTR_xcrypt_buffer(&ctx, c, clen);
+    printf(" [done]\n");
 }
 
 /*!

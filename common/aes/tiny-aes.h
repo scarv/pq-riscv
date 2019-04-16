@@ -9,10 +9,9 @@
 // CTR enables encryption in counter-mode.
 // ECB enables the basic ECB 16-byte block algorithm. All can be enabled simultaneously.
 
-#ifndef ECB
-  #define ECB 1
-#endif
-
+#define ECB 1
+#define CTR 1
+// #define CBC 1
 
 //#define AES128 1
 //#define AES192 1
