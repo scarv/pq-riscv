@@ -23,8 +23,8 @@ NTRU-Prime     |  x  | 2-512     |       |        |     |     |
 NTSKEM         |  x  |           | 256   |        |     |     | 
 NewHope        |  x  |           | 128,256 |      |     |     | 
 ROLLO          |  x  |           |       |        |  x  |     | 
-RQC            |  x  |           |       |        |  x  |     | 
+RQC            |  x  |           |       |        |  x  |  x  | 
 Round5         |  x  |           |       | 128,256 |    |     | 
 SABER          |  x  | 3-256,512 | 128   |        |     |     | 
-SIKE           |  x  |           | 256   |        |     |     | 
+SIKE           |  x  |           | 256   |        |     |  x  | 
 ThreeBears     |  x  |           |  x    |        |     |     | 
