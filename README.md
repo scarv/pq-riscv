@@ -58,6 +58,11 @@ Currently, only KEM candiates are included in the repository.
 This is purely to make the workload more managable for the time
 being.
 
+Critically, the code here should have *zero* external dependencies.
+Those schemes which have large external dependencies which are unavailable
+for RISC-V are currently excluded from the build, pending fixes.
+- See more in the [todo list](./TODO.md).
+
 **Short/medium term:**
 
 - [x] Have one instance of each submission included and integrated into
