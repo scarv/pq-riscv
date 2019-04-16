@@ -6,6 +6,21 @@ on the RISC-V ISA.*
 
 ---
 
+## Overview
+
+Lorem ipsum...
+
+## Progress
+
+- [x] Have one instance of each submission included and integrated into
+      the build system.
+- [ ] Identify external dependencies of all submissions.
+  - [ ] Acquire riscv builds for these dependencies, or...
+  - [ ] Create function stubs and implement only the required functionality
+        manually.
+- [ ] Have one instance of each submission successfully building.
+- [ ] Have one instance of each submission running inside spike.
+
 ## Schemes & Parameters:
 
 Builds | Finished | Scheme | Deps | Notes
@@ -83,4 +98,3 @@ Builds | Finished | Scheme | Deps | Notes
  [ ] |    | `threebears_mamabear` | |
  [ ] |    | `threebears_papabearephem` | |
  [ ] |    | `threebears_papabear` | |
- [ ] |    | `zips` |  |
