@@ -45,7 +45,7 @@ $(foreach KEM,$(KEMS),$(eval $(call tgt_kem_run,$(KEM))))
 
 
 #
-# Run all executables
+# Build all executables
 #
 all: $(EXES)
 

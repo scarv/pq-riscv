@@ -4,6 +4,8 @@
 #include "rijndael.h"
 #include <stdio.h>
 
+#include "aes/tiny-aes.h"
+
 /*!
 */
 int pqriscv_aes_set_encrypt_key (
@@ -17,11 +19,14 @@ int pqriscv_aes_set_encrypt_key (
 /*!
 */
 void pqriscv_aes_256_ecb (
-    unsigned char *key, 
-    unsigned char *ctr,
-    unsigned char *ctxt
+    unsigned char *key,     
+    unsigned char *ctr, // in
+    unsigned char *ctxt // out
 ){
-    pqriscv_aes_encrypt(ctr,ctxt,key);
+    struct AES_ctx ctx;
+    AES_init_ctx(&ctx, key);
+    memcpy(ctxt, ctr, AES_BLOCKLEN);
+    AES_ECB_encrypt(&ctx, ctxt);
 }
 
 /*!

@@ -67,9 +67,9 @@ for RISC-V are currently excluded from the build, pending fixes.
 
 - [x] Have one instance of each submission included and integrated into
       the build system.
-- [ ] Identify external dependencies of all submissions.
+- [x] Identify external dependencies of all submissions.
   - [ ] Acquire riscv builds for these dependencies, or...
-  - [ ] Create function stubs and implement only the required functionality
+  - [x] Create function stubs and implement only the required functionality
         manually.
 - [ ] Have one instance of each submission successfully building.
 - [ ] Have one instance of each submission running inside spike.
@@ -237,6 +237,19 @@ Builds | Scheme  | Deps | Notes
  [ ] | `threebears_papabear` | |
 
 ---
+
+# License Information
+
+This repository contains code from various different places. Code file headers
+have been retained to show where they came from.
+
+- `common/` contains code coppied from the 
+   [pqm4](https://github.com/mupq/pqm4) project, along with some additions.
+- `common/aes/` contains code from the excellent
+   [Tiny-AES](https://github.com/kokke/tiny-AES-c) project.
+- `candidates/` code is all public domain, as submitted to the NIST
+  PQC competition. Where needed, some of this code has been modified to
+  make use of common functions.
 
 ## Acknowledgements
 

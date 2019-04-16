@@ -1,7 +1,7 @@
 
 SRC = $(SCHEME_SRC)/frodo640.c \
       $(SCHEME_SRC)/util.c \
-      $(COMMON_SRC)/aes.c \
+      $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/sha2.c \
       $(COMMON_SRC)/fips202.c \
       $(COMMON_SRC)/keccakf1600.c \
