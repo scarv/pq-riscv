@@ -6,7 +6,6 @@ SRC = $(SCHEME_SRC)/cbd.c \
       $(SCHEME_SRC)/ntt.c \
       $(SCHEME_SRC)/poly.c \
       $(SCHEME_SRC)/polyvec.c \
-      $(SCHEME_SRC)/PQCgenKAT_kem.c \
       $(SCHEME_SRC)/reduce.c \
       $(SCHEME_SRC)/verify.c \
       $(SCHEME_SRC)/symmetric-fips202.c \
@@ -16,7 +15,7 @@ SRC = $(SCHEME_SRC)/cbd.c \
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
 $(BUILD)/%.o : $(SCHEME_SRC)/%.c
-	mkdir -p $(dir $(BUILD))
+	mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(info $(BUILD))
