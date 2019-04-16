@@ -190,9 +190,9 @@ Builds | Scheme  | Deps | Notes
  [ ] | `ntru-prime-sntrup653` |  |
  [ ] | `ntru-prime-sntrup761` |  |
  [ ] | `ntru-prime-sntrup857` |  |
- [x] | `nokats_12_64` |  |
- [ ] | `nokats_13_80` |  |
- [ ] | `nokats_13_136` |  |
+ [x] | `nts_12_64` |  |
+ [ ] | `nts_13_80` |  |
+ [ ] | `nts_13_136` |  |
  [?] | `rollo-i-128` | NTL | Waiting on RISC-V dependencies
  [ ] | `rollo-i-192` |  |
  [ ] | `rollo-i-256` |  |
