@@ -18,7 +18,7 @@ OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)-objdump
 CFLAGS    = -O2 -march=$(ISA_STR) -I$(PQRV) -g -DRV_ISA=$(ISA_STR)
 CXXFLAGS  = -O2 -march=$(ISA_STR) -I$(PQRV) -g -DRV_ISA=$(ISA_STR)
 
-SCHEME   ?= kem_round5_r5n1_1kem_0d
+SCHEME   ?= kem_rqc-128
 VARIANT  ?= ref
 
 BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)
