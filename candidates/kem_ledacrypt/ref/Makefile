@@ -9,7 +9,7 @@ SRC = $(SCHEME_SRC)/library/H_Q_matrices_generation.c \
       $(SCHEME_SRC)/library/niederreiter_encrypt.c \
       $(SCHEME_SRC)/library/niederreiter_keygen.c \
       $(SCHEME_SRC)/rng.c \
-      $(COMMON_SRC)/aes.c
+      $(COMMON_AES_SRC)  
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 

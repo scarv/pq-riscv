@@ -18,7 +18,7 @@ SRC = $(SCHEME_SRC)/a_fixed.c \
       $(SCHEME_SRC)/r5_memory.c \
       $(SCHEME_SRC)/r5_parameter_sets.c \
       $(SCHEME_SRC)/xef_ref.c \
-      $(COMMON_SRC)/aes.c \
+      $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/rng.c 
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))

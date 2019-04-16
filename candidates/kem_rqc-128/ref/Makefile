@@ -8,7 +8,7 @@ SRC = $(SCHEME_SRC)/gabidulin.cpp \
       $(SCHEME_SRC)/ffi/ffi_field.cpp \
       $(SCHEME_SRC)/ffi/ffi_vec.cpp \
       $(COMMON_SRC)/rng.c \
-      $(COMMON_SRC)/aes.c 
+      $(COMMON_AES_SRC)
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 

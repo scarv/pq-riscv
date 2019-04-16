@@ -7,7 +7,7 @@ SRC = $(SCHEME_SRC)/bch.c \
       $(SCHEME_SRC)/repetition.c \
       $(SCHEME_SRC)/tensor.c \
       $(SCHEME_SRC)/vector.c \
-      $(COMMON_SRC)/aes.c \
+      $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/sha2.c \
       $(COMMON_SRC)/rng.c 
 

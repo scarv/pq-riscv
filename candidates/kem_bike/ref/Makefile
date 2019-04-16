@@ -21,7 +21,7 @@ SRC = $(SCHEME_SRC)/conversions.c \
       $(SCHEME_SRC)/decode.c \
       $(SCHEME_SRC)/utilities.c \
       $(SCHEME_SRC)/ntl.c \
-      $(COMMON_SRC)/aes.c \
+      $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/sha2.c \
       $(COMMON_SRC)/rng.c 
 

@@ -10,7 +10,7 @@ SRC = $(SCHEME_SRC)/SIKEp434/api.c \
       $(SCHEME_SRC)/src/sike.c \
       $(SCHEME_SRC)/src/sike_params.c \
       $(COMMON_SRC)/rng.c \
-      $(COMMON_SRC)/aes.c \
+      $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/fips202.c \
       $(COMMON_SRC)/keccakf1600.c
 

@@ -7,7 +7,7 @@ SRC = $(SCHEME_SRC)/Decode.c \
       $(SCHEME_SRC)/uint32_sort.c \
       $(COMMON_SRC)/sha2.c \
       $(COMMON_SRC)/rng.c \
-      $(COMMON_SRC)/aes.c
+      $(COMMON_AES_SRC)  
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 

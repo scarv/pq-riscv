@@ -9,7 +9,7 @@ SRC = $(SCHEME_SRC)/crypto_sort.c \
       $(SCHEME_SRC)/sample.c \
       $(SCHEME_SRC)/verify.c \
       $(COMMON_SRC)/rng.c \
-      $(COMMON_SRC)/aes.c \
+      $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/keccakf1600.c 
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))

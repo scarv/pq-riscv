@@ -7,7 +7,7 @@ SRC = $(SCHEME_SRC)/ffi_elt.c \
       $(SCHEME_SRC)/parsing.c \
       $(SCHEME_SRC)/rsr_algorithm.c \
       $(COMMON_SRC)/rng.c  \
-      $(COMMON_SRC)/aes.c 
+      $(COMMON_AES_SRC)   
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 

@@ -5,7 +5,7 @@ SRC = $(SCHEME_SRC)/kem.c \
       $(SCHEME_SRC)/shake.c \
       $(SCHEME_SRC)/threebears.c \
       $(COMMON_SRC)/rng.c \
-      $(COMMON_SRC)/aes.c  
+      $(COMMON_AES_SRC)
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
