@@ -15,8 +15,8 @@ LD        = $(RISCV)/bin/$(GNU_STRING)-ld
 AR        = $(RISCV)/bin/$(GNU_STRING)-ar 
 OBJDUMP   = $(RISCV)/bin/$(GNU_STRING)-objdump
 
-CFLAGS    = -O2 -march=$(ISA_STR) -I$(PQRV) -g
-CXXFLAGS  = -O2 -march=$(ISA_STR) -I$(PQRV) -g
+CFLAGS    = -O2 -march=$(ISA_STR) -I$(PQRV) -g -DRV_ISA=$(ISA_STR)
+CXXFLAGS  = -O2 -march=$(ISA_STR) -I$(PQRV) -g -DRV_ISA=$(ISA_STR)
 
 SCHEME   ?= kem_round5_r5n1_1kem_0d
 VARIANT  ?= ref
