@@ -12,3 +12,4 @@
 - [ ] AES stub function implementation
 - [ ] OpenSSL bignum dependency
   - [ ] Bike
+- [ ] CSHAKE dependency unpicking for round5
