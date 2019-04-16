@@ -6,6 +6,17 @@ on the RISC-V ISA.*
 
 ---
 
+**Contents:**
+- [Overview](#Overview)
+- [Aims](#Aims)
+- [Repository Organisation](#Repository-Organisation)
+- [Building and Running](#building-and-running)
+- [Implementation Progress](#Implemented-Schemes)
+- [License Information](#License-Information)
+- [Acknowledgements](#Acknowledgements)
+
+---
+
 ## Overview
 
 This project aims to create a 
@@ -73,6 +84,10 @@ being.
 
 ## Repository organisation
 
+We take a *flat* approach to the content of the `candidates/` directory.
+Each sub-directory is named to indicate the scheme, and the standard
+parameter set of that scheme.
+
 ```
 .
 ├── build           - All build artifacts live here
@@ -89,7 +104,11 @@ being.
 └── README.md       - This file
 ```
 
-## Implemented Schemes & Parameters:
+## Building and Running
+
+**TBD:**
+
+## Implemented Schemes
 
 The submitted code for each candidate is included in this repository.
 Currently, only the reference implementations of each candidate are
