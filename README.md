@@ -106,7 +106,33 @@ parameter set of that scheme.
 
 ## Building and Running
 
-**TBD:**
+**Pre-requesits:**
+- [A RISC-V toolchain](https://github.com/riscv/riscv-gnu-toolchain)
+- The standard RISC-V [toolset](https://github.com/riscv/riscv-tools).
+  - Specifically, you will need the SPIKE ISA simulator, and the 
+    proxy kernel "`pk`".
+
+Make sure that you set your `RISCV` environmnet variable to point at
+your toolchain installation.
+
+**Building a scheme:**
+
+This command will select a variant of a scheme.
+```sh
+$> make -f Makefile.kem SCHEME=<scheme name> VARIANT=<var> <target>
+```
+
+Where:
+- `<scheme name>` is a directory in `candidates/`
+- `<var>` is a directory under `candidates/<scheme name>/`
+- `<target>` is one of `lib`, `exe` or `run`.
+  - `lib` builds a static library for the specified candiate.
+  - `exe` links the test hardness with the static library to create an
+          executable elf file.
+  - `run` will run the built elf file through spike on top of the
+          proxy kernel.
+
+Build artifacts are placed in `build/<scheme name>/<var>/`
 
 ## Implemented Schemes
 
@@ -134,7 +160,16 @@ Builds | Scheme  | Deps | Notes
  [ ] | `kem_lac192` |  |
  [ ] | `kem_lac256` |  |
  [x] | `kem_ledacrypt` | | (SL=4,N0=2)
- [x] | `kem_mceliece348864` |  |
+ [x] | `kem_mceliece348864` |  | Fails to terminate without AES implemented.
+ [ ] | `kem_mceliece348864f` |  | 
+ [ ] | `kem_mceliece460896` |  | 
+ [ ] | `kem_mceliece460896f` |  | 
+ [ ] | `kem_mceliece6688128` |  | 
+ [ ] | `kem_mceliece6688128f` |  | 
+ [ ] | `kem_mceliece6960119` |  | 
+ [ ] | `kem_mceliece6960119f` |  | 
+ [ ] | `kem_mceliece8192128` |  | 
+ [ ] | `kem_mceliece8192128f` |  | 
  [x] | `newhope512cca` |  |
  [ ] | `newhope512cpa` |  |
  [ ] | `newhope1014cca` |  |
