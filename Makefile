@@ -1,6 +1,7 @@
 
 KEMS = $(subst /,,$(subst ./candidates/,,$(wildcard ./candidates/*/)))
 
+# Built up by calls to tgt_kem_build
 EXES = 
 
 #

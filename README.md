@@ -14,6 +14,7 @@ on the RISC-V ISA.*
 - [Implementation Progress](#Implemented-Schemes)
 - [License Information](#License-Information)
 - [Acknowledgements](#Acknowledgements)
+- [Todo](./TODO.md)
 
 ---
 
@@ -45,10 +46,10 @@ This means:
   workloads. It is important these impacts are quantified.
 
 This project is heavily inspired by the excellent
-[libpqcrypto](https://libpqcrypto.org/index.html)
-and
+[libpqcrypto](https://libpqcrypto.org/index.html),
+[PQClean](https://github.com/pqclean/pqclean) and
 [pqm4](https://github.com/mupq/pqm4).
-We are keen to collaborate with people working in this area to extend
+We are keen to work with others in this area to extend
 and expand `pq-riscv`.
 
 ## Aims

@@ -113,7 +113,8 @@ void handleErrors(void)
     abort();
 }
 
-// Use whatever AES implementation you have. This uses AES from openSSL library
+// Use whatever AES implementation you have.
+// PQ-RISCV uses the implementation in "common/"
 //    key - 256-bit AES key
 //    ctr - a 128-bit plaintext value
 //    buffer - a 128-bit ciphertext value

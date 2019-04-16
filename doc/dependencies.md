@@ -28,3 +28,9 @@ Round5         |  x  |           |       | 128,256 |    |     |
 SABER          |  x  | 3-256,512 | 128   |        |     |     | 
 SIKE           |  x  |           | 256   |        |     |  x  | 
 ThreeBears     |  x  |           |  x    |        |     |     | 
+
+---
+
+## Specifics:
+
+

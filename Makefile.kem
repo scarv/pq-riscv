@@ -1,9 +1,9 @@
 
 PQRV      = $(PWD)
 
-ISA_XLEN  = 32
-ISA_BASE  = rv$(ISA_XLEN)i
-ISA_EXT   = mc
+ISA_XLEN  = 64
+ISA_BASE  = rv$(ISA_XLEN)g
+ISA_EXT   = 
 ISA_STR   = $(ISA_BASE)$(ISA_EXT)
 
 GNU_STRING= riscv$(ISA_XLEN)-unknown-elf
