@@ -10,41 +10,41 @@ on the RISC-V ISA.*
 
 Builds | Finished | Scheme | Deps | Notes
 -------|---------|---------|------|-------
- [X] |    |`kem_bike64` | NTL, Bignum | 
+ [x] |    |`kem_bike64` | NTL, Bignum | 
  [ ] |    |`kem_bike96` |  |
  [ ] |    |`kem_bike128` |  |
- [X] |    |`kem_frodo640` |  |
+ [x] |    |`kem_frodo640` |  |
  [ ] |    |`kem_frodo976` |  |
  [ ] |    |`kem_frodo1344` |  |
- [X] |    |`kem_kyber512` |  |
+ [x] |    |`kem_kyber512` |  |
  [ ] |    |`kem_kyber768` |  |
  [ ] |    |`kem_kyber1024` |  |
- [X] |    |`kem_lac128` |  |
+ [x] |    |`kem_lac128` |  |
  [ ] |    |`kem_lac192` |  |
  [ ] |    |`kem_lac256` |  |
- [X] |    |`kem_ledacrypt` | | (SL=4,N0=2)
- [X] |    |`kem_mceliece348864` |  |
- [X] |    |`newhope512cca` |  |
+ [x] |    |`kem_ledacrypt` | | (SL=4,N0=2)
+ [x] |    |`kem_mceliece348864` |  |
+ [x] |    |`newhope512cca` |  |
  [ ] |    |`newhope512cpa` |  |
  [ ] |    |`newhope1014cca` |  |
  [ ] |    |`newhope1014cpa` |  |
- [X] |    |`hqc-128-1` |  |
+ [x] |    |`hqc-128-1` |  |
  [ ] |    |`hqc-192-1` |  |
  [ ] |    |`hqc-192-2` |  |
  [ ] |    |`hqc-256-1` |  |
  [ ] |    |`hqc-256-2` |  |
  [ ] |    |`hqc-256-3` |  |
- [X] |    |`ntru-hps2048509` |  |
+ [x] |    |`ntru-hps2048509` |  |
  [ ] |    |`ntru-hps2048677` |  |
  [ ] |    |`ntru-hps4096821` |  |
  [ ] |    |`ntru-hrss701` |  |
- [X] |    |`ntru-prime-ntrulpr653` |  |
+ [x] |    |`ntru-prime-ntrulpr653` |  |
  [ ] |    |`ntru-prime-ntrulpr761` |  |
  [ ] |    |`ntru-prime-ntrulpr857` |  |
  [ ] |    |`ntru-prime-sntrup653` |  |
  [ ] |    |`ntru-prime-sntrup761` |  |
  [ ] |    |`ntru-prime-sntrup857` |  |
- [X] |    |`nokats_12_64` |  |
+ [x] |    |`nokats_12_64` |  |
  [ ] |    |`nokats_13_80` |  |
  [ ] |    |`nokats_13_136` |  |
  [?] |    |`rollo-i-128` | NTL |
@@ -68,9 +68,14 @@ Builds | Finished | Scheme | Deps | Notes
  [ ] |    |`round5_r5nd_5kem_0d` |  |
  [ ] |    |`round5_r5nd_5kem_5d` |  |
  [?] |    |`rqc-128` | NTL |
- [ ] |    |`rqc-192` |  |
- [ ] |    |`rqc-256` |  |
- [?] |    |`saber` |  |
- [ ] |    |`sike` |  |
+ [ ] |    |`rqc-192` | NTL |
+ [ ] |    |`rqc-256` | NTL |
+ [x] |    |`saber_1` |  |
+ [ ] |    |`saber_2` |  |
+ [ ] |    |`saber_3` |  |
+ [?] |    |`sikep434` | GMP |
+ [ ] |    |`sikep503` | GMP |
+ [ ] |    |`sikep610` | GMP |
+ [ ] |    |`sikep751` | GMP |
  [ ] |    |`threebears` |  |
  [ ] |    |`zips` |  |
