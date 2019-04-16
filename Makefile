@@ -19,6 +19,7 @@ KEMS =  kem_frodo640 \
 
 # Built up by calls to tgt_kem_build
 EXES = 
+RUN_LOGS = 
 
 #
 # Define a target to build the executable for a given scheme
@@ -35,7 +36,7 @@ endef
 # Define a target to run the executable for a given scheme
 #
 define tgt_kem_run
-.PHONY: build_${1}
+RUN_LOGS += run_${1} 
 run_${1} : build_${1}
 	$(MAKE) -f Makefile.kem SCHEME=${1} run
 endef
@@ -48,6 +49,11 @@ $(foreach KEM,$(KEMS),$(eval $(call tgt_kem_run,$(KEM))))
 # Build all executables
 #
 all: $(EXES)
+
+#
+# Run executables
+#
+run-all: $(RUN_LOGS)
 
 clean-all:
 	rm -rf build/*
