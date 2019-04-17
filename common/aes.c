@@ -42,7 +42,6 @@ int pqriscv_stream_aes256ctr(
     AES_init_ctx(&ctx,k);
     AES_ctx_set_iv(&ctx, n); // n = nonce = IV.
     AES_CTR_xcrypt_buffer(&ctx, c, clen);
-    printf(" [done]\n");
 }
 
 /*!

@@ -13,11 +13,3 @@ SRC = $(SCHEME_SRC)/cpapke.c \
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
-$(BUILD)/%.o : $(SCHEME_SRC)/%.c
-	mkdir -p $(BUILD)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(info $(BUILD))
-
-$(LIBNAME) : $(OBJ)
-	$(AR) rcs $@ $^
