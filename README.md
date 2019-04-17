@@ -54,6 +54,9 @@ and expand `pq-riscv`.
 
 ## Aims
 
+The overarching aim is to be able to run any candidate on a RISC-V
+platform (simulator first, then hardware) *out of the box*.
+
 Currently, only KEM candiates are included in the repository.
 This is purely to make the workload more managable for the time
 being.
