@@ -153,7 +153,7 @@ Some code has been modified so that common functionality
 
 Builds | Scheme  | Deps | Notes
 -------|---------|------|-------
- [x] | `kem_bike64` | NTL, OpenSSL/Bignum |  Waiting on RISC-V dependencies
+ [ ] | `kem_bike64` | NTL, OpenSSL/Bignum |  Waiting on RISC-V NTL
  [ ] | `kem_bike96` |  |
  [ ] | `kem_bike128` |  |
  [x] | `kem_frodo640` |  |
@@ -180,7 +180,7 @@ Builds | Scheme  | Deps | Notes
  [ ] | `newhope512cpa` |  |
  [ ] | `newhope1014cca` |  |
  [ ] | `newhope1014cpa` |  |
- [x] | `hqc-128-1` |  |
+ [ ] | `hqc-128-1` | NTL | Wating on RISC-V NTL
  [ ] | `hqc-192-1` |  |
  [ ] | `hqc-192-2` |  |
  [ ] | `hqc-256-1` |  |
@@ -199,7 +199,7 @@ Builds | Scheme  | Deps | Notes
  [x] | `nts_12_64` |  |
  [ ] | `nts_13_80` |  |
  [ ] | `nts_13_136` |  |
- [?] | `rollo-i-128` | NTL | Waiting on RISC-V dependencies
+ [ ] | `rollo-i-128` | NTL | Waiting on RISC-V NTL
  [ ] | `rollo-i-192` |  |
  [ ] | `rollo-i-256` |  |
  [ ] | `rollo-ii-128` |  |
@@ -208,7 +208,7 @@ Builds | Scheme  | Deps | Notes
  [ ] | `rollo-iii-128` |  |
  [ ] | `rollo-iii-192` |  |
  [ ] | `rollo-iii-256` |  |
- [?] | `round5_r5n1_1kem_0d` |  | RNG functions need unpicking 
+ [ ] | `round5_r5n1_1kem_0d` |  | RNG functions need unpicking 
  [ ] | `round5_r5n1_3kem_0d` |  |
  [ ] | `round5_r5n1_5kem_0d` |  |
  [ ] | `round5_r5nd_0kem_2iot` |  |
@@ -219,13 +219,13 @@ Builds | Scheme  | Deps | Notes
  [ ] | `round5_r5nd_3kem_5d` |  |
  [ ] | `round5_r5nd_5kem_0d` |  |
  [ ] | `round5_r5nd_5kem_5d` |  |
- [?] | `rqc-128` | NTL | Waiting on RISC-V dependencies
+ [ ] | `rqc-128` | NTL | Waiting on RISC-V NTL build.
  [ ] | `rqc-192` | NTL |
  [ ] | `rqc-256` | NTL |
  [x] | `saber_1` |  |
  [ ] | `saber_2` |  |
  [ ] | `saber_3` |  |
- [?] | `sikep434` | GMP |
+ [ ] | `sikep434` | GMP | Waiting on RISC-V GMP build.
  [ ] | `sikep503` | GMP |
  [ ] | `sikep610` | GMP |
  [ ] | `sikep751` | GMP |
@@ -250,6 +250,12 @@ have been retained to show where they came from.
 - `common/sha2*` contains code from the public domain implementation in
    crypto_hash/sha512/ref/ from http://bench.cr.yp.to/supercop.html
    by D. J. Bernstein.
+- `common/keccakf16000.c` -  Based on the public domain implementation in
+   crypto_hash/keccakc512/simple/ from http://bench.cr.yp.to/supercop.html
+   by Ronny Van Keer 
+   and the public domain "TweetFips202" implementation
+   from https://twitter.com/tweetfips202
+   by Gilles Van Assche, Daniel J. Bernstein, and Peter Schwabe.
 - `candidates/` code is all public domain, as submitted to the NIST
   PQC competition. Where needed, some of this code has been modified to
   make use of common functions.
