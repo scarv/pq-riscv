@@ -18,12 +18,22 @@
     #error Please define KEM_VARIANT
 #endif
 
+/*!
+@brief Prints out a character array in hexadecimal.
+@param bytes - the array of bytes to print as hex
+@param length - the length of bytes to print.
+*/
 void print_hex (char * bytes, int length) {
     for(int i = 0; i < length; i ++) {
         printf("%02x",bytes[i]);
     }
 }
 
+/*!
+@brief Read <length> random bytes into <to_fill>
+@param to_fill - pre-allocated array of bytes to be filled with random data.
+@param length - The number of random bytes to read.
+*/
 void read_random(unsigned char * to_fill, size_t length) {
     FILE * fh = fopen("/dev/urandom","r");
     fread(to_fill, sizeof(unsigned char), length, fh);
