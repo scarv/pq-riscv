@@ -24,33 +24,14 @@ int random_bytes(unsigned char *r, unsigned int len)
 //pseudo-random bytes
 int pseudo_random_bytes(unsigned char *r, unsigned int len, const unsigned char *seed)
 {
-    printf("%s:%d not implemented\n",__FILE__,__LINE__);
-	//int c_len;
-	//unsigned char data[AES_BLOCK_SIZE],c[AES_BLOCK_SIZE];
-	//int i,loop=len/AES_BLOCK_SIZE;
-	//if(r==NULL || seed==NULL)
-	//{
-	//	return 1;
-	//}
-	//memset(r,0,len);
-	//EVP_CIPHER_CTX *ctx;
-	//ctx = EVP_CIPHER_CTX_new();
-	//EVP_EncryptInit_ex(ctx, EVP_aes_256_ctr(), NULL, seed, NULL);
-	//memset(data,0,AES_BLOCK_SIZE);
-	//for(i=0;i<loop;i++)
-	//{
-	////	*p=i;//set counter
-	//	EVP_EncryptUpdate(ctx, r+i*AES_BLOCK_SIZE, &c_len, data, AES_BLOCK_SIZE);
-	//}
-	////check tail
-	//if(len%AES_BLOCK_SIZE>0)
-	//{
-	////	*p=loop;
-	//	EVP_EncryptUpdate(ctx, c, &c_len, data, AES_BLOCK_SIZE);
-	//}
-	//memcpy(r+loop-1,c,len%AES_BLOCK_SIZE);
-	//EVP_CIPHER_CTX_free(ctx);
-	
+
+    char diversifier[16];
+    memset(diversifier,0,16);
+
+    AES_XOF_struct ctx;
+    seedexpander_init(&ctx,seed,diversifier,len);
+    seedexpander(&ctx,r,len);
+
 	return 0;
 }
 
@@ -62,17 +43,17 @@ int hash(const unsigned char *in, unsigned int len_in, unsigned char * out)
 	{
 		return 1;
 	}
-	
+  
 	#if defined LAC128
-	sha256(in,len_in,out);
+	sha256(out,in,len_in);
 	#endif
 	
 	#if defined LAC192
-	sha256(in,len_in,out);
+	sha256(out,in,len_in);
 	#endif
 
 	#if defined LAC256
-	sha256(in,len_in,out);
+	sha256(out,in,len_in);
 	#endif
 
 	
@@ -88,7 +69,7 @@ int gen_seed(unsigned char *in, unsigned int len_in, unsigned char * out)
 		return 1;
 	}
 	
-	sha256(in,len_in,out);
+	sha256(out,in,len_in);
 	return 0;
 }
 

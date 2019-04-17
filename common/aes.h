@@ -9,7 +9,6 @@
 //
 
 # define AES_MAXNR 14
-# define AES_BLOCK_SIZE 16
 
 /*!
 @brief AES Key type

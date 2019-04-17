@@ -81,6 +81,7 @@ int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned char *in,u
   uint32 T1;
   uint32 T2;
 
+
   a = load_bigendian(statebytes +  0); state[0] = a;
   b = load_bigendian(statebytes +  4); state[1] = b;
   c = load_bigendian(statebytes +  8); state[2] = c;
@@ -90,15 +91,16 @@ int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned char *in,u
   g = load_bigendian(statebytes + 24); state[6] = g;
   h = load_bigendian(statebytes + 28); state[7] = h;
 
+
   while (inlen >= 64) {
-    uint32 w0  = load_bigendian(in +  0);
+    uint32 w0  = load_bigendian(in +  0); 
     uint32 w1  = load_bigendian(in +  4);
     uint32 w2  = load_bigendian(in +  8);
     uint32 w3  = load_bigendian(in + 12);
     uint32 w4  = load_bigendian(in + 16);
     uint32 w5  = load_bigendian(in + 20);
     uint32 w6  = load_bigendian(in + 24);
-    uint32 w7  = load_bigendian(in + 28);
+    uint32 w7  = load_bigendian(in + 28); 
     uint32 w8  = load_bigendian(in + 32);
     uint32 w9  = load_bigendian(in + 36);
     uint32 w10 = load_bigendian(in + 40);
@@ -107,6 +109,7 @@ int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned char *in,u
     uint32 w13 = load_bigendian(in + 52);
     uint32 w14 = load_bigendian(in + 56);
     uint32 w15 = load_bigendian(in + 60);
+  
 
     F(w0 ,0x428a2f98)
     F(w1 ,0x71374491)
@@ -181,6 +184,7 @@ int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned char *in,u
     F(w13,0xa4506ceb)
     F(w14,0xbef9a3f7)
     F(w15,0xc67178f2)
+    
 
     a += state[0];
     b += state[1];
@@ -203,6 +207,7 @@ int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned char *in,u
     in += 64;
     inlen -= 64;
   }
+    
 
   store_bigendian(statebytes +  0,state[0]);
   store_bigendian(statebytes +  4,state[1]);
@@ -229,12 +234,11 @@ static const char iv[32] = {
 
 int sha256(unsigned char *out, const unsigned char *in, unsigned long long inlen)
 {
-    printf("SHA2-256\n");
   unsigned char h[32];
   unsigned char padded[128];
   int i;
   unsigned long long bits = inlen << 3;
-
+  
   for (i = 0;i < 32;++i) h[i] = iv[i];
 
   crypto_hashblocks_sha256(h,in,inlen);
