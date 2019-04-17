@@ -8,12 +8,3 @@ SRC = $(SCHEME_SRC)/kem.c \
       $(COMMON_AES_SRC)
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
-
-$(BUILD)/%.o : $(SCHEME_SRC)/%.c
-	mkdir -p $(BUILD)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(info $(BUILD))
-
-$(LIBNAME) : $(OBJ)
-	$(AR) rcs $@ $^

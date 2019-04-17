@@ -21,10 +21,6 @@ CFLAGS += -I$(SCHEME_SRC)/include \
            -DCPU_WORD_BITS=$(ISA_XLEN)
 
 $(BUILD)/%.o : $(SCHEME_SRC)/library/%.c
-	mkdir -p $(BUILD)
+	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(info $(BUILD))
-
-$(LIBNAME) : $(OBJ)
-	$(AR) rcs $@ $^

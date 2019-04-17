@@ -16,7 +16,7 @@ CRYSTALS-Kyber |  x  | 3-256,512 | 128,256 |      |     |     |
 FrodoKEM       |  x  | 3         |  128  |        |     |     | 
 HQC            |  x  | 2-512     |       |        |  x  |     | 
 LAC            |  x  | 2-256     |       |        |     |     | 
-LEDAcrypt      |  x  |           |       |        |     |     | 
+LEDAcrypt      |  x  | 3-384     |       |        |     |     | 
 Mceliece       |  x  |           | 256   |        |     |     | 
 NTRU           |  x  | 3-256     |       |        |     |     | 
 NTRU-Prime     |  x  | 2-512     |       |        |     |     | 

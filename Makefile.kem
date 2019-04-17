@@ -25,7 +25,12 @@ BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)
 SCHEME_SRC= $(PQRV)/candidates/$(SCHEME)/$(VARIANT)
 COMMON_SRC= $(PQRV)/common
 
-COMMON_AES_SRC = $(COMMON_SRC)/aes.c $(COMMON_SRC)/aes/tiny-aes.c
+COMMON_AES_SRC     = $(COMMON_SRC)/aes.c $(COMMON_SRC)/aes/tiny-aes.c
+COMMON_SHA_512_SRC = $(COMMON_SRC)/sha2_512.c \
+                     $(COMMON_SRC)/sha2_512_hashblocks.c
+COMMON_SHA_384_SRC = $(COMMON_SRC)/sha2_384.c \
+                     $(COMMON_SRC)/sha2_512_hashblocks.c
+COMMON_SHA_256_SRC = $(COMMON_SRC)/sha2_256.c
 
 LIBNAME   = $(BUILD)/lib$(SCHEME).a
 EXENAME   = $(BUILD)/$(SCHEME).exe
@@ -37,12 +42,19 @@ exe: $(EXENAME)
 lib: $(LIBNAME)
 
 $(BUILD)/%.o : $(COMMON_SRC)/%.c
-	mkdir -p $(dir $(BUILD))
+	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(BUILD)/%.o : $(COMMON_SRC)/aes/%.c
-	mkdir -p $(dir $(BUILD))
+	@mkdir -p $(BUILD)
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(BUILD)/%.o : $(SCHEME_SRC)/%.c
+	@mkdir -p $(BUILD)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(LIBNAME) : $(OBJ)
+	$(AR) rcs $@ $^
 
 $(EXENAME) : $(HARNESS) $(LIBNAME)
 	$(CC) $(CFLAGS) -I$(SCHEME_SRC) -o $@ $< $(LIBNAME) -lm

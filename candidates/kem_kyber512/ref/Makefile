@@ -9,16 +9,9 @@ SRC = $(SCHEME_SRC)/cbd.c \
       $(SCHEME_SRC)/reduce.c \
       $(SCHEME_SRC)/verify.c \
       $(SCHEME_SRC)/symmetric-fips202.c \
+      $(COMMON_SRC)/keccakf1600.c \
       $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/rng.c 
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
-$(BUILD)/%.o : $(SCHEME_SRC)/%.c
-	mkdir -p $(BUILD)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(info $(BUILD))
-
-$(LIBNAME) : $(OBJ)
-	$(AR) rcs $@ $^

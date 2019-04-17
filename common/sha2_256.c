@@ -1,11 +1,9 @@
-/*
-20080913
-D. J. Bernstein
-Public domain.
-*/
+/* Based on the public domain implementation in
+ * crypto_hash/sha512/ref/ from http://bench.cr.yp.to/supercop.html
+ * by D. J. Bernstein */
 
+#include <stdio.h>
 #include "sha2.h"
-
 
 typedef unsigned int uint32;
 
@@ -69,7 +67,7 @@ static void store_bigendian(unsigned char *x,uint32 u)
   b = a; \
   a = T1 + T2;
 
-static int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned char *in,unsigned long long inlen)
+int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned char *in,unsigned long long inlen)
 {
   uint32 state[8];
   uint32 a;
@@ -192,7 +190,7 @@ static int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned cha
     f += state[5];
     g += state[6];
     h += state[7];
-  
+
     state[0] = a;
     state[1] = b;
     state[2] = c;
@@ -218,8 +216,6 @@ static int crypto_hashblocks_sha256(unsigned char *statebytes,const unsigned cha
   return inlen;
 }
 
-#define blocks crypto_hashblocks_sha256
-
 static const char iv[32] = {
   0x6a,0x09,0xe6,0x67,
   0xbb,0x67,0xae,0x85,
@@ -231,26 +227,17 @@ static const char iv[32] = {
   0x5b,0xe0,0xcd,0x19,
 } ;
 
-
-/*************************************************
-* Name:        sha256
-*
-* Description: SHA256 with non-incremental API
-*
-* Arguments:   - unsigned char *out:       pointer to output (32 bytes)
-*              - const unsigned char *in:  pointer to input
-*              - unsigned long long inlen: length of input in bytes
-**************************************************/
-void sha256(unsigned char *out,const unsigned char *in,unsigned long long inlen)
+int sha256(unsigned char *out, const unsigned char *in, unsigned long long inlen)
 {
+    printf("SHA2-256\n");
   unsigned char h[32];
   unsigned char padded[128];
-  unsigned long long i;
+  int i;
   unsigned long long bits = inlen << 3;
 
   for (i = 0;i < 32;++i) h[i] = iv[i];
 
-  blocks(h,in,inlen);
+  crypto_hashblocks_sha256(h,in,inlen);
   in += inlen;
   inlen &= 63;
   in -= inlen;
@@ -268,7 +255,7 @@ void sha256(unsigned char *out,const unsigned char *in,unsigned long long inlen)
     padded[61] = bits >> 16;
     padded[62] = bits >> 8;
     padded[63] = bits;
-    blocks(h,padded,64);
+    crypto_hashblocks_sha256(h,padded,64);
   } else {
     for (i = inlen + 1;i < 120;++i) padded[i] = 0;
     padded[120] = bits >> 56;
@@ -279,8 +266,10 @@ void sha256(unsigned char *out,const unsigned char *in,unsigned long long inlen)
     padded[125] = bits >> 16;
     padded[126] = bits >> 8;
     padded[127] = bits;
-    blocks(h,padded,128);
+    crypto_hashblocks_sha256(h,padded,128);
   }
 
   for (i = 0;i < 32;++i) out[i] = h[i];
+
+  return 0;
 }
