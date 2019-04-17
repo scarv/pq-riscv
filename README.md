@@ -71,7 +71,11 @@ for RISC-V are currently excluded from the build, pending fixes.
   - [ ] Acquire riscv builds for these dependencies, or...
   - [x] Create function stubs and implement only the required functionality
         manually.
-- [ ] Have one instance of each submission successfully building.
+- [ ] Optimised RISC-V implementations of shared algorithms. Possibly
+      taken from [libscarv](https://github.com/scarv/libscarv)
+  - [ ] AES
+  - [ ] Keccak
+  - [ ] SHA2
 - [ ] Have one instance of each submission running inside spike.
 - [ ] For each candidate, use the benchmarking features of spike to
       identify performance critical code.
@@ -83,10 +87,24 @@ for RISC-V are currently excluded from the build, pending fixes.
   enables.
   - Candidates include the HiFive development board or an FPGA image of
     the Rocket Chip.
+  - This will require modification on candidate code to fit inside
+    memory constrained environments.
 - Testing of Instruction Set Extensions (ISEs) like our 
   [XCrypto](https://github.com/scarv/xcrypto)
   project.
 - Include signing schemes.
+
+**Qualifying Statements:**
+
+- This repository is in it's very early stages.
+- There is some repetition here of the great work done in the 
+  [pqm4](https://github.com/mupq/pqm4) repository. While this *is*
+  inefficient in some respects, and means this repository is much less
+  stable / trustworthy, it was felt that a "clean break" with the round 
+  two candidates was beneficial given the different target architecture.
+- The code for the candidate schemes has been coppied directly in.
+  This leads to considerable duplication of code for different parameter
+  sets of the same scheme.
 
 ## Repository organisation
 
