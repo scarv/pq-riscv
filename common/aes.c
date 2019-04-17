@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include <string.h>
 #include "aes.h"
-#include "rijndael.h"
 #include <stdio.h>
 
 #include "aes/tiny-aes.h"
