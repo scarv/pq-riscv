@@ -247,6 +247,9 @@ have been retained to show where they came from.
    [pqm4](https://github.com/mupq/pqm4) project, along with some additions.
 - `common/aes/` contains code from the excellent
    [Tiny-AES](https://github.com/kokke/tiny-AES-c) project.
+- `common/sha2*` contains code from the public domain implementation in
+   crypto_hash/sha512/ref/ from http://bench.cr.yp.to/supercop.html
+   by D. J. Bernstein.
 - `candidates/` code is all public domain, as submitted to the NIST
   PQC competition. Where needed, some of this code has been modified to
   make use of common functions.
