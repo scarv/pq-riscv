@@ -157,7 +157,7 @@ Variants | Scheme  | Deps | Notes
   .  | `kem_bike96` |  |
   .  | `kem_bike128` |  |
  ref | `kem_frodo640` |  |
-  .  | `kem_frodo976` |  |
+ ref | `kem_frodo976` |  |
   .  | `kem_frodo1344` |  |
  ref | `kem_kyber512` |  |
   .  | `kem_kyber768` |  |

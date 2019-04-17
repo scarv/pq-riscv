@@ -1,5 +1,6 @@
 
 KEMS =  kem_frodo640 \
+        kem_frodo976 \
         kem_kyber512 \
         kem_lac128 \
         kem_ledacrypt \

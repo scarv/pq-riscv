@@ -20,3 +20,7 @@
   - [x] Random shared secret generation.
   - [ ] KAT functionality.
   - [ ] Repeat random testing
+- [ ] Benchmark reporting
+  - [ ] EXE log gathering.
+  - [ ] Report generation.
+- [ ] Signing Schemes.
