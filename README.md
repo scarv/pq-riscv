@@ -160,7 +160,7 @@ Variants | Scheme  | Deps | Notes
  ref | `kem_frodo976` |  |
  ref | `kem_frodo1344` |  |
  ref | `kem_kyber512` |  |
-  .  | `kem_kyber768` |  |
+ ref | `kem_kyber768` |  |
   .  | `kem_kyber1024` |  |
  ref | `kem_lac128` |  |
   .  | `kem_lac192` |  |
