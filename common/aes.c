@@ -37,7 +37,6 @@ int pqriscv_stream_aes256ctr(
     const unsigned char *n,
     const unsigned char *k
 ){
-    printf("pqriscv_stream_aes256ctr: %d",clen);
     fflush(stdout);
     struct AES_ctx ctx;
     AES_init_ctx(&ctx,k);
