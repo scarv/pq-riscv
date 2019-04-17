@@ -4,6 +4,7 @@ KEMS =  kem_frodo640 \
         kem_frodo1344 \
         kem_kyber512 \
         kem_kyber768 \
+        kem_kyber1024 \
         kem_lac128 \
         kem_ledacrypt \
         kem_mceliece348864 \
