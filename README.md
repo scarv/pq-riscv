@@ -153,88 +153,88 @@ Some code has been modified so that common functionality
 
 Variants | Scheme  | Deps | Notes
 -------|---------|------|-------
-     | `kem_bike64` | NTL, OpenSSL/Bignum |  Waiting on RISC-V NTL
-     | `kem_bike96` |  |
-     | `kem_bike128` |  |
+  .  | `kem_bike64` | NTL, OpenSSL/Bignum |  Waiting on RISC-V NTL
+  .  | `kem_bike96` |  |
+  .  | `kem_bike128` |  |
  ref | `kem_frodo640` |  |
-     | `kem_frodo976` |  |
-     | `kem_frodo1344` |  |
+  .  | `kem_frodo976` |  |
+  .  | `kem_frodo1344` |  |
  ref | `kem_kyber512` |  |
-     | `kem_kyber768` |  |
-     | `kem_kyber1024` |  |
+  .  | `kem_kyber768` |  |
+  .  | `kem_kyber1024` |  |
  ref | `kem_lac128` |  |
-     | `kem_lac192` |  |
-     | `kem_lac256` |  |
+  .  | `kem_lac192` |  |
+  .  | `kem_lac256` |  |
  ref | `kem_ledacrypt` | | (SL=4,N0=2)
  ref | `kem_mceliece348864` |  | Fails to terminate without AES implemented.
-     | `kem_mceliece348864f` |  | 
-     | `kem_mceliece460896` |  | 
-     | `kem_mceliece460896f` |  | 
-     | `kem_mceliece6688128` |  | 
-     | `kem_mceliece6688128f` |  | 
-     | `kem_mceliece6960119` |  | 
-     | `kem_mceliece6960119f` |  | 
-     | `kem_mceliece8192128` |  | 
-     | `kem_mceliece8192128f` |  | 
+  .  | `kem_mceliece348864f` |  | 
+  .  | `kem_mceliece460896` |  | 
+  .  | `kem_mceliece460896f` |  | 
+  .  | `kem_mceliece6688128` |  | 
+  .  | `kem_mceliece6688128f` |  | 
+  .  | `kem_mceliece6960119` |  | 
+  .  | `kem_mceliece6960119f` |  | 
+  .  | `kem_mceliece8192128` |  | 
+  .  | `kem_mceliece8192128f` |  | 
  ref | `newhope512cca` |  |
-     | `newhope512cpa` |  |
-     | `newhope1014cca` |  |
-     | `newhope1014cpa` |  |
-     | `hqc-128-1` | NTL | Wating on RISC-V NTL
-     | `hqc-192-1` |  |
-     | `hqc-192-2` |  |
-     | `hqc-256-1` |  |
-     | `hqc-256-2` |  |
-     | `hqc-256-3` |  |
+  .  | `newhope512cpa` |  |
+  .  | `newhope1014cca` |  |
+  .  | `newhope1014cpa` |  |
+  .  | `hqc-128-1` | NTL | Wating on RISC-V NTL
+  .  | `hqc-192-1` |  |
+  .  | `hqc-192-2` |  |
+  .  | `hqc-256-1` |  |
+  .  | `hqc-256-2` |  |
+  .  | `hqc-256-3` |  |
  ref | `ntru-hps2048509` |  |
-     | `ntru-hps2048677` |  |
-     | `ntru-hps4096821` |  |
-     | `ntru-hrss701` |  |
+  .  | `ntru-hps2048677` |  |
+  .  | `ntru-hps4096821` |  |
+  .  | `ntru-hrss701` |  |
  ref | `ntru-prime-ntrulpr653` |  |
-     | `ntru-prime-ntrulpr761` |  |
-     | `ntru-prime-ntrulpr857` |  |
-     | `ntru-prime-sntrup653` |  |
-     | `ntru-prime-sntrup761` |  |
-     | `ntru-prime-sntrup857` |  |
+  .  | `ntru-prime-ntrulpr761` |  |
+  .  | `ntru-prime-ntrulpr857` |  |
+  .  | `ntru-prime-sntrup653` |  |
+  .  | `ntru-prime-sntrup761` |  |
+  .  | `ntru-prime-sntrup857` |  |
  ref | `nts_12_64` |  |
-     | `nts_13_80` |  |
-     | `nts_13_136` |  |
-     | `rollo-i-128` | NTL | Waiting on RISC-V NTL
-     | `rollo-i-192` |  |
-     | `rollo-i-256` |  |
-     | `rollo-ii-128` |  |
-     | `rollo-ii-192` |  |
-     | `rollo-ii-256` |  |
-     | `rollo-iii-128` |  |
-     | `rollo-iii-192` |  |
-     | `rollo-iii-256` |  |
-     | `round5_r5n1_1kem_0d` |  | RNG functions need unpicking 
-     | `round5_r5n1_3kem_0d` |  |
-     | `round5_r5n1_5kem_0d` |  |
-     | `round5_r5nd_0kem_2iot` |  |
-     | `round5_r5nd_1kem_0d` |  |
-     | `round5_r5nd_1kem_4longkey` |  |
-     | `round5_r5nd_1kem_5d` |  |
-     | `round5_r5nd_3kem_0d` |  |
-     | `round5_r5nd_3kem_5d` |  |
-     | `round5_r5nd_5kem_0d` |  |
-     | `round5_r5nd_5kem_5d` |  |
-     | `rqc-128` | NTL | Waiting on RISC-V NTL build.
-     | `rqc-192` | NTL |
-     | `rqc-256` | NTL |
+  .  | `nts_13_80` |  |
+  .  | `nts_13_136` |  |
+  .  | `rollo-i-128` | NTL | Waiting on RISC-V NTL
+  .  | `rollo-i-192` |  |
+  .  | `rollo-i-256` |  |
+  .  | `rollo-ii-128` |  |
+  .  | `rollo-ii-192` |  |
+  .  | `rollo-ii-256` |  |
+  .  | `rollo-iii-128` |  |
+  .  | `rollo-iii-192` |  |
+  .  | `rollo-iii-256` |  |
+  .  | `round5_r5n1_1kem_0d` |  | RNG functions need unpicking 
+  .  | `round5_r5n1_3kem_0d` |  |
+  .  | `round5_r5n1_5kem_0d` |  |
+  .  | `round5_r5nd_0kem_2iot` |  |
+  .  | `round5_r5nd_1kem_0d` |  |
+  .  | `round5_r5nd_1kem_4longkey` |  |
+  .  | `round5_r5nd_1kem_5d` |  |
+  .  | `round5_r5nd_3kem_0d` |  |
+  .  | `round5_r5nd_3kem_5d` |  |
+  .  | `round5_r5nd_5kem_0d` |  |
+  .  | `round5_r5nd_5kem_5d` |  |
+  .  | `rqc-128` | NTL | Waiting on RISC-V NTL build.
+  .  | `rqc-192` | NTL |
+  .  | `rqc-256` | NTL |
  ref | `saber_1` |  |
-     | `saber_2` |  |
-     | `saber_3` |  |
-     | `sikep434` | GMP | Waiting on RISC-V GMP build.
-     | `sikep503` | GMP |
-     | `sikep610` | GMP |
-     | `sikep751` | GMP |
+  .  | `saber_2` |  |
+  .  | `saber_3` |  |
+  .  | `sikep434` | GMP | Waiting on RISC-V GMP build.
+  .  | `sikep503` | GMP |
+  .  | `sikep610` | GMP |
+  .  | `sikep751` | GMP |
  ref | `threebears_babybear` | | Uses custom SHAKE implementation. Removed `weak` attribute from expand function in `ring.h` as it causes linker to emit jump to `0x0`.
-     | `threebears_babybearephem` | |
-     | `threebears_mamabearephem` | |
-     | `threebears_mamabear` | |
-     | `threebears_papabearephem` | |
-     | `threebears_papabear` | |
+  .  | `threebears_babybearephem` | |
+  .  | `threebears_mamabearephem` | |
+  .  | `threebears_mamabear` | |
+  .  | `threebears_papabearephem` | |
+  .  | `threebears_papabear` | |
 
 ---
 
