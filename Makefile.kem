@@ -59,7 +59,7 @@ $(LIBNAME) : $(OBJ)
 	$(AR) rcs $@ $^
 
 $(EXENAME) : $(HARNESS) $(LIBNAME)
-	$(CC) $(CFLAGS) -I$(SCHEME_SRC) -o $@ $< $(LIBNAME) -lm
+	$(CC) $(CFLAGS) -I$(SCHEME_SRC) -o $@ $< $(LIBNAME) -lm -DKEM_NAME=\"$(SCHEME)\" -DKEM_VARIANT=\"$(VARIANT)\"
 	$(OBJDUMP) -D $@ > $@.dis
 
 run: $(EXENAME)

@@ -14,3 +14,9 @@
   - [ ] Bike
 - [ ] CSHAKE dependency unpicking for round5
 - [X] Ledacrypt aes256 common code refactor.
+- [ ] Test harness
+  - [x] Scheme name embedding.
+  - [x] YAML output
+  - [x] Random shared secret generation.
+  - [ ] KAT functionality.
+  - [ ] Repeat random testing
