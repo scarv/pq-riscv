@@ -184,8 +184,8 @@ Variants | Scheme  | Deps | Notes
  ref | `kem_kyber768` |  |
  ref | `kem_kyber1024` |  |
  ref | `kem_lac128` |  |
-  .  | `kem_lac192` |  |
-  .  | `kem_lac256` |  |
+ ref | `kem_lac192` |  |
+ ref | `kem_lac256` |  |
  ref | `kem_ledacrypt` | | (SL=4,N0=2)
  ref | `kem_mceliece348864` |  | Fails to terminate without AES implemented.
   .  | `kem_mceliece348864f` |  | 
