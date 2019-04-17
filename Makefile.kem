@@ -64,7 +64,7 @@ $(EXENAME) : $(HARNESS) $(LIBNAME)
 
 run: $(EXENAME)
 	$(RISCV)/bin/spike \
-        $(RISCV)/$(GNU_STRING)/bin/pk $(EXENAME)
+        $(RISCV)/$(GNU_STRING)/bin/pk $(EXENAME) | tee  $(EXENAME).log
 
 clean:
 	rm -rf $(BUILD)/*
