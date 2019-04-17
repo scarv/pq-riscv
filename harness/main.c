@@ -77,11 +77,6 @@ int main(int argc, char ** argv) {
 
     printf("          cycles: %10lu\n", cycles_keypair);
     printf("          instrs: %10lu\n", instrs_keypair);
-    //printf("pk     = 0x"); print_hex(pk,CRYPTO_PUBLICKEYBYTES); printf("\n");
-    //printf("sk     = 0x"); print_hex(sk,CRYPTO_SECRETKEYBYTES); printf("\n");
-
-    //printf("ct     = 0x"); print_hex(ct,CRYPTO_CIPHERTEXTBYTES); printf("\n");
-    //printf("ss     = 0x"); print_hex(ss,CRYPTO_BYTES); printf("\n");
 
     printf("        encrypt:\n");
     cycles_enc     = perf_rdcycle();
@@ -92,8 +87,6 @@ int main(int argc, char ** argv) {
     
     printf("          cycles: %10lu\n", cycles_enc);
     printf("          instrs: %10lu\n", instrs_enc);
-    //printf("ct     = 0x"); print_hex(ct,CRYPTO_CIPHERTEXTBYTES); printf("\n");
-    //printf("ss     = 0x"); print_hex(ss,CRYPTO_BYTES); printf("\n");
 
     printf("        decrypt:\n");
     cycles_dec     = perf_rdcycle();
@@ -104,8 +97,6 @@ int main(int argc, char ** argv) {
     
     printf("          cycles: %10lu\n", cycles_dec);
     printf("          instrs: %10lu\n", instrs_dec);
-    //printf("ct     = 0x"); print_hex(ct,CRYPTO_CIPHERTEXTBYTES); printf("\n");
-    //printf("ss     = 0x"); print_hex(ss,CRYPTO_BYTES); printf("\n");
 
     printf("---\nn");
 
