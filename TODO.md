@@ -9,8 +9,8 @@
 - [ ] GMP library RISC-V port
   - [ ] RQC
   - [ ] SIKE
-- [ ] AES stub function implementation
+- [X] AES stub function implementation
 - [ ] OpenSSL bignum dependency
   - [ ] Bike
 - [ ] CSHAKE dependency unpicking for round5
-- [ ] Ledacrypt aes256 common code refactor.
+- [X] Ledacrypt aes256 common code refactor.
