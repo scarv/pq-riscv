@@ -34,7 +34,7 @@
 #include "niederreiter_encrypt.h"
 #include "niederreiter_decrypt.h"
 #include "common/rng.h"
-#include "sha3.h"
+#include "common/fips202.h"
 #include <string.h>
 /* Generates a keypair - pk is the public key and sk is the secret key. */
 int crypto_kem_keypair( unsigned char *pk,
@@ -69,9 +69,11 @@ int crypto_kem_enc( unsigned char *ct,
                                   NUM_ERRORS_T,
                                   &niederreiter_encap_key_expander);
 
-   HASH_FUNCTION((const unsigned char *) error_vector,    // input
-                 (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B), // input Length
-                 ss);
+   HASH_FUNCTION(
+    ss,
+    (const unsigned char *) error_vector,    // input
+    (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B) // input Length
+   );
 
    encrypt_niederreiter((DIGIT *) ct,(publicKeyNiederreiter_t *) pk, error_vector);
    return 0;
@@ -90,9 +92,11 @@ int crypto_kem_dec( unsigned char *ss,
    int decode_ok = decrypt_niederreiter(decoded_error_vector,
                                         (privateKeyNiederreiter_t *)sk,
                                         (DIGIT *)ct);
-   HASH_FUNCTION((const unsigned char *) decoded_error_vector,
-                    (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B),
-                    ss);
+   HASH_FUNCTION(
+    ss,
+    (const unsigned char *) decoded_error_vector,
+    (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B)
+   );
    if (decode_ok == 1) {
       return 0;
    }

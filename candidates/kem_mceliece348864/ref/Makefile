@@ -14,7 +14,7 @@ SRC = $(SCHEME_SRC)/benes.c \
       $(SCHEME_SRC)/util.c \
       $(COMMON_SRC)/rng.c \
       $(COMMON_SRC)/fips202.c \
-      $(COMMON_SRC)/keccakf1600.c \
+      $(COMMON_SHA3_SRC) \
       $(COMMON_AES_SRC)
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))

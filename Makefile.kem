@@ -31,6 +31,8 @@ COMMON_SHA_512_SRC = $(COMMON_SRC)/sha2_512.c \
 COMMON_SHA_384_SRC = $(COMMON_SRC)/sha2_384.c \
                      $(COMMON_SRC)/sha2_512_hashblocks.c
 COMMON_SHA_256_SRC = $(COMMON_SRC)/sha2_256.c
+COMMON_SHA3_SRC    = $(COMMON_SRC)/fips202.c \
+                     $(COMMON_SRC)/keccakf1600.c
 
 LIBNAME   = $(BUILD)/lib$(SCHEME).a
 EXENAME   = $(BUILD)/$(SCHEME).exe

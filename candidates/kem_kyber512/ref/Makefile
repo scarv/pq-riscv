@@ -9,7 +9,7 @@ SRC = $(SCHEME_SRC)/cbd.c \
       $(SCHEME_SRC)/reduce.c \
       $(SCHEME_SRC)/verify.c \
       $(SCHEME_SRC)/symmetric-fips202.c \
-      $(COMMON_SRC)/keccakf1600.c \
+      $(COMMON_SHA3_SRC) \
       $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/rng.c 
 

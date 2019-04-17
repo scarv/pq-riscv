@@ -9,7 +9,7 @@ SRC = $(SCHEME_SRC)/SABER_indcpa.c \
       $(COMMON_SRC)/rng.c \
       $(COMMON_AES_SRC)   \
       $(COMMON_SRC)/fips202.c \
-      $(COMMON_SRC)/keccakf1600.c
+      $(COMMON_SHA3_SRC)
 
 OBJ = $(addprefix $(BUILD)/,$(addsuffix .o,$(notdir $(basename $(SRC)))))
 
