@@ -8,7 +8,7 @@ KEMS =  kem_frodo640 \
         kem_lac128 \
         kem_lac192 \
         kem_lac256 \
-        kem_ledacrypt \
+        kem_ledacrypt_sl5_n02 \
         kem_mceliece348864 \
         kem_newhope512cca \
         kem_ntru-hps2048509 \

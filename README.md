@@ -186,7 +186,11 @@ Variants | Scheme  | Deps | Notes
  ref | `kem_lac128` |  |
  ref | `kem_lac192` |  |
  ref | `kem_lac256` |  |
- ref | `kem_ledacrypt` | | (SL=4,N0=2)
+  .  | `kem_ledacrypt` | | (SL=1,N0=2)
+  .  | `kem_ledacrypt` | | (SL=2,N0=2)
+  .  | `kem_ledacrypt` | | (SL=3,N0=2)
+  .  | `kem_ledacrypt` | | (SL=4,N0=2)
+ ref | `kem_ledacrypt` | | (SL=5,N0=2)
  ref | `kem_mceliece348864` |  | Fails to terminate without AES implemented.
   .  | `kem_mceliece348864f` |  | 
   .  | `kem_mceliece460896` |  | 
