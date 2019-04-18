@@ -111,7 +111,7 @@ for RISC-V are currently excluded from the build, pending fixes.
 
 ## Repository organisation
 
-We take a *flat* approach to the content of the `candidates/` directory.
+We take a *flat* approach to the content of the `kem/` directory.
 Each sub-directory is named to indicate the scheme, and the standard
 parameter set of that scheme.
 
@@ -119,7 +119,7 @@ parameter set of that scheme.
 .
 ├── build           - All build artifacts live here
 │   └── kem_*
-├── candidates      - source
+├── kem             - All KEM candidates
 │   └── kem_*
 │       ├── opt     - Source code for optimised implementations
 │       └── ref     - Source code for the reference implementation
@@ -150,8 +150,8 @@ $> make -f Makefile.kem SCHEME=<scheme name> VARIANT=<var> <target>
 ```
 
 Where:
-- `<scheme name>` is a directory in `candidates/`
-- `<var>` is a directory under `candidates/<scheme name>/`
+- `<scheme name>` is a directory in `kem/`
+- `<var>` is a directory under `kem/<scheme name>/`
 - `<target>` is one of `lib`, `exe` or `run`.
   - `lib` builds a static library for the specified candiate.
   - `exe` links the test hardness with the static library to create an
@@ -281,7 +281,7 @@ have been retained to show where they came from.
    and the public domain "TweetFips202" implementation
    from https://twitter.com/tweetfips202
    by Gilles Van Assche, Daniel J. Bernstein, and Peter Schwabe.
-- `candidates/` code is all public domain, as submitted to the NIST
+- `kem/` code is all public domain, as submitted to the NIST
   PQC competition. Where needed, some of this code has been modified to
   make use of common functions.
 

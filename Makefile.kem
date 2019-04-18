@@ -22,7 +22,7 @@ SCHEME   ?= kem_threebears_babybear
 VARIANT  ?= ref
 
 BUILD     = $(PQRV)/build/$(SCHEME)/$(VARIANT)
-SCHEME_SRC= $(PQRV)/candidates/$(SCHEME)/$(VARIANT)
+SCHEME_SRC= $(PQRV)/kem/$(SCHEME)/$(VARIANT)
 COMMON_SRC= $(PQRV)/common
 
 COMMON_AES_SRC     = $(COMMON_SRC)/aes.c $(COMMON_SRC)/aes/tiny-aes.c
@@ -38,7 +38,7 @@ LIBNAME   = $(BUILD)/lib$(SCHEME).a
 EXENAME   = $(BUILD)/$(SCHEME).exe
 HARNESS   = $(PQRV)/harness/main.c
 
-include $(PQRV)/candidates/$(SCHEME)/$(VARIANT)/Makefile
+include $(PQRV)/kem/$(SCHEME)/$(VARIANT)/Makefile
 
 exe: $(EXENAME)
 lib: $(LIBNAME)
